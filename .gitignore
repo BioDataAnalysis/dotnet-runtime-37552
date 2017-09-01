@@ -1,0 +1,12 @@
+*~
+*.swp
+*.swo
+.DS_Store
+build/
+cmake-build-*
+doc/html/
+.idea/*
+.vs
+bin
+obj
+include-artifacts
