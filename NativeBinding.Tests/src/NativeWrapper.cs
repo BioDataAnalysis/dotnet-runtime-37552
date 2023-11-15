@@ -268,18 +268,18 @@ namespace bda
         protected static string getProjectInstallDirectory()
         {
             string vProjectInstallDirectory;
-            vProjectInstallDirectory = Environment.GetEnvironmentVariable("PLATFORMBDATARGETDIR");
+            vProjectInstallDirectory = Environment.GetEnvironmentVariable("BBSTARGETDIR_OSPATH");
             if (vProjectInstallDirectory == null)
             {
-                mLogger?.LogInformation("PInvokeTests::getProjectInstallDirectory(): Environment variable 'PLATFORMBDATARGETDIR' is unset.\n");
-                throw new Exception("PInvokeTests::getProjectInstallDirectory(): Environment variable 'PLATFORMBDATARGETDIR' is unset");
+                mLogger?.LogInformation("PInvokeTests::getProjectInstallDirectory(): Environment variable 'BBSTARGETDIR_OSPATH' is unset.\n");
+                throw new Exception("PInvokeTests::getProjectInstallDirectory(): Environment variable 'BBSTARGETDIR_OSPATH' is unset");
             }
 
-            //vProjectInstallDirectory += "/BDAImAcquireManaged";
+            //vProjectInstallDirectory += "/BDAImageAcquireManaged";
             if (!Directory.Exists(vProjectInstallDirectory))
             {
-                mLogger?.LogInformation("PInvokeTests::getProjectInstallDirectory(): 'PLATFORMBDATARGETDIR' points to non-existing directory '" + vProjectInstallDirectory + "'.\n");
-                throw new Exception("PInvokeTests::getProjectInstallDirectory(): 'PLATFORMBDATARGETDIR' points to non-existing directory '" + vProjectInstallDirectory + "'");
+                mLogger?.LogInformation("PInvokeTests::getProjectInstallDirectory(): 'BBSTARGETDIR_OSPATH' points to non-existing directory '" + vProjectInstallDirectory + "'.\n");
+                throw new Exception("PInvokeTests::getProjectInstallDirectory(): 'BBSTARGETDIR_OSPATH' points to non-existing directory '" + vProjectInstallDirectory + "'");
             }
 
             return vProjectInstallDirectory;
